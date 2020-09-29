@@ -1,0 +1,256 @@
+{% extends "common/l_sidebar.html" %}
+
+
+
+
+
+
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>レザーマチョナイズ/スタッフ紹介</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="static/css/style.css">
+
+
+    <!--追加のCSS-->
+    <link rel="stylesheet" href="static/css/new_style.css">
+
+    <!--inview.js-->
+    <script src="static/js/jquery.inview.js"></script>
+    <script src="static/js/animation.js"></script>
+
+</head>
+<body>
+    <header class="page_title_area">
+        <video class="bg_video" src="static/media/staffmovie.mp4" autoplay loop muted playsinline></video>
+        <div class="bg_cover"></div>
+        <div class="page_title">Staff</div>
+        <div class="page_sub_title">このジムスタッフはフィクションです</div>
+
+        <nav class="side_menu">
+            <a href="#aboutme" class="side_menu_content"><div class="content_name">About_me</div></a>
+            <a href="#portfolio" class="side_menu_content"><div class="content_name">Portfolio</div></a>
+            <a href="#pricelist" class="side_menu_content"><div class="content_name">Price_list</div></a>
+            <a href="#contact" class="side_menu_content"><div class="content_name">Contact</div></a>
+        </nav>
+    </header>
+
+
+    <main id="mainarea" class="container">
+
+        <section id="aboutme">
+            
+            <div class="section_header_area">
+                <div class="section_header_shadow">About_staff</div>
+                <div class="section_header">About_staff</div>
+            </div>
+
+
+            <!--    TIPS:スタッフの画像と紹介テキストを互い違いにすることで、見る側にマンネリ感を与えないようにすることができる。
+                さらにアニメーションを使うことでユーザーのページ離脱を防ぐ
+
+            -->
+            <!--ここからBootstrap-->
+            <!-- <div class="row align-middle my-3">
+            -->
+             <!--DBから手に入れたデータをループ処理で描画していく。-->
+            {% for content in data %}
+            <!--models.pyで定義したフィールドの属性名を指定する(filenameは動画ファイル名、titleは動画タイトル)
+            波括弧を使用して変数を表示、もしくは処理を実行させる。詳しくは教科書のP69を参照
+             -->
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img scr={{content.filename}} class="col-sm-12" style="image: url('static/media/staffpic_edited/adam-smith.jpg');" alt="Adam Smith" >
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1" >{{content.staffname}}</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1" >{{conent.bestmuscle}}</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1" >{{content.workouthistory}}</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1" >{{content.coment}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <!--
+            </div>
+            -->
+            <!--ここまでBootstrap-->
+            
+        </section>
+
+        <section id="portfolio">
+            <div class="section_header_area">
+                <div class="section_header_shadow">Portfolio</div>
+                <div class="section_header">Portfolio</div>
+            </div>
+
+
+            <div class="portfolio_content_area">
+
+
+                <div class="articles_list">
+
+                    <div class="article_frame">
+                        <article class="article">
+                            <a class="article_link" href="">
+                            <div class="article_header"><div class="article_title">WEB Design</div></div>
+                            <div class="article_thumb_frame">
+                                <img class="article_thumb" src="static/media/webdesign.jpg" alt="thumbnail">
+                            </div>
+                            <div class="article_bottom"><div class="article_continue">Read_more...</div></div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="article_frame">
+                        <article class="article">
+                            <a class="article_link" href="">
+                            <div class="article_header"><div class="article_title">WEB Apps</div></div>
+                            <div class="article_thumb_frame">
+                                <img class="article_thumb" src="static/media/webapp.jpg" alt="thumbnail">
+                            </div>
+                            <div class="article_bottom"><div class="article_continue">Read_more...</div></div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="article_frame">
+                        <article class="article">
+                            <a class="article_link" href="">
+                            <div class="article_header"><div class="article_title">AI</div></div>
+                            <div class="article_thumb_frame">
+                                <img class="article_thumb" src="static/media/ai.jpg" alt="thumbnail">
+                            </div>
+                            <div class="article_bottom"><div class="article_continue">Read_more...</div></div>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="article_frame">
+                        <article class="article">
+                            <a class="article_link" href="">
+                            <div class="article_header"><div class="article_title">IoT</div></div>
+                            <div class="article_thumb_frame">
+                                <img class="article_thumb" src="static/media/iot.jpg" alt="thumbnail">
+                            </div>
+                            <div class="article_bottom"><div class="article_continue">Read_more...</div></div>
+                            </a>
+                        </article>
+                    </div>
+
+                </div>
+
+
+            </div>
+        
+        
+        </section>
+        <section id="pricelist">
+            <div class="section_header_area">
+                <div class="section_header_shadow">Parsonal-training_Price</div>
+                <div class="section_header">Personal-training_Price</div>
+            </div>
+                
+            <div class="caution">※パーソナルトレーニングは完全予約制です。</div>
+
+            <div class="pricelist_table">
+                <div class="pc_view">
+                    <div class="table_head_row">
+                        <div class="table_head_col">（Staff）</div>
+                        <div class="table_head_col">1回券</div>
+                        <div class="table_head_col">4回券</div>
+                        <div class="table_head_col">8回券</div>
+                    </div>
+                </div>
+
+                <div class="table_body_row">
+                    <div class="table_body_col col_head">Adam Smith</div>
+                    <div class="table_body_col"><span class="sp_view">1回券 : </span>￥ 10,000</div>
+                    <div class="table_body_col"><span class="sp_view">4回券 : </span>￥ 38,000</div>
+                    <div class="table_body_col"><span class="sp_view">8回券 : </span>￥ 72,000</div>
+                </div>
+                <div class="table_body_row">
+                    <div class="table_body_col col_head">Scott Martin</div>
+                    <div class="table_body_col"><span class="sp_view">1回券 : </span>￥ 9,000</div>
+                    <div class="table_body_col"><span class="sp_view">4回券 : </span>￥ 34,000</div>
+                    <div class="table_body_col"><span class="sp_view">8回券 : </span>￥ 64,000</div>
+                </div>
+                <div class="table_body_row">
+                    <div class="table_body_col col_head">Monica Anderson</div>
+                    <div class="table_body_col"><span class="sp_view">1回券 : </span>￥ 8,000</div>
+                    <div class="table_body_col"><span class="sp_view">4回券 : </span>￥ 30,000</div>
+                    <div class="table_body_col"><span class="sp_view">8回券 : </span>￥ 56,000</div>
+                </div>
+                <div class="table_body_row">
+                    <div class="table_body_col col_head">Ken Williams</div>
+                    <div class="table_body_col"><span class="sp_view">１回券 : </span>￥ 7,000</div>
+                    <div class="table_body_col"><span class="sp_view">4回券 : </span>￥ 26,000</div>
+                    <div class="table_body_col"><span class="sp_view">8回券 : </span>￥ 48,000</div>
+                </div>
+            </div>
+
+
+        </section>
+        <section id="contact">
+            <div class="section_header_area">
+                <div class="section_header_shadow">Contact</div>
+                <div class="section_header">Contact</div>
+            </div>
+
+            <div class="my-2">御用の方は、下記フォームよりお問い合わせください。</div>
+
+
+            <!--ここからBootstrapオンリー-->
+            <form class="my-2" action="">
+                <div class="form-row my-2">
+                    <div class="col-sm-6">
+                        <label for="contact_name1">お名前(姓):</label>
+                        <input id="contact_name1" type="text" class="form-control" maxlength="50" placeholder="(例)山田">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="contact_name2">お名前(名):</label>
+                        <input id="contact_name2" type="text" class="form-control" maxlength="50" placeholder="(例)太郎">
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <label for="contact_mail">メールアドレス:</label>
+                        <input id="contact_mail" type="text" class="form-control" maxlength="50" placeholder="(例) hogehoge@example.com ">
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <label for="contact_cate">御用件カテゴリ:</label>
+                        <select id="contact_cate" class="form-control">
+                            <option value="">御用件を選んでください</option>
+                            <option value="1">仕事の依頼</option>
+                            <option value="2">仕事の進捗状況について</option>
+                            <option value="3">納品物の不具合報告</option>
+                            <option value="4">仕事のキャンセル</option>
+                            <option value="5">このサイトについての質問・要望</option>
+                            <option value="6">その他の質問・要望等</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row my-2">
+                    <div class="col">
+                        <label for="contact_main">本文:</label>
+                        <textarea id="contact_main" class="form-control" rows="10" placeholder="ここにお問い合わせ内容を記入してください。"></textarea>
+                    </div>
+                </div>
+            </form>
+            <!--ここまでBootstrapオンリー-->
+        </section>
+         
+    </main>
+
+
+
+</body>
+</html>
+

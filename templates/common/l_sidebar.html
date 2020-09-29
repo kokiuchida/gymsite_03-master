@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block page_title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'common/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/l_sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/fontawesome/all.css' %}">
+
+    <script src="{% static 'common/js/jquery-3.1.1.min.js' %}"></script>
+
+
+    {% block extra_head %}{% endblock %}
+
+</head>
+<body>
+
+    <header>
+        <div id="title_area" class="title_area">
+            <h1 class="title">{% block header_title %}{% endblock %}</h1>
+        </div>
+
+        <input id="menu_button" class="menu_button" type="checkbox">
+        <label class="menu_label" for="menu_button">
+            <div class="menu_open_icon"><i class="fas fa-bars"></i></div>
+            <div class="menu_close_icon"><i class="fas fa-times"></i></div>
+        </label>
+
+        <div id="menu_closer" class="menu_closer"></div>
+
+        <!--メニューエリア PC表示時、左側に表示。SP表示時、サイドバーとして機能する-->
+        <nav id="menu_area" class="menu_area">
+            {% block sidebar_content %}
+            {% endblock %}
+        </nav>
+    </header>
+
+    {% block main %}
+    {% endblock %}
+
+</body>
+</html>
+
+

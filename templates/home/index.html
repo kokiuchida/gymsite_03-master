@@ -1,0 +1,66 @@
+{% extends "common/l_sidebar.html" %}
+{% load static %}
+
+{% block page_title %}レザーマチョナイズ{% endblock %}
+
+{% block extra_head %}
+<!-- slickのCSS -->
+<link href="{% static 'common/css/slick/slick-theme.css' %}" rel="stylesheet">
+<link href="{% static 'common/css/slick/slick.css' %}" rel="stylesheet">
+<!-- slickのJS -->
+<script src="{% static 'common/js/slick/slick.min.js' %}"></script>
+
+<!--homeのCSSとJS-->
+<script src="{% static 'home/js/script.js' %}"></script>
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block header_title %}レザーマチョナイズ{% endblock %}
+{% block sidebar_content %}
+<a href="" ><div class="menu_content">会員サイトログイン</div></a>
+<a href="" ><div class="menu_content">施設案内</div></a>
+<a href="{% url 'staff:index' %}" ><div class="menu_content">スタッフ紹介</div></a>
+<a href="" ><div class="menu_content">トレーニングプラン</div></a>
+<a href="" ><div class="menu_content">採用情報</div></a>
+<a href="" ><div class="menu_content">ブログ</div></a>
+<a href="" ><div class="menu_content">SNSリンク</div></a>
+<a href="" ><div class="menu_content">ショップ</div></a>
+
+<!--urls.pyで指定したname="movie"とname="index"が発動している-->
+<a href="{% url 'movie:index' %}" ><div class="menu_content">トレーニング動画</div></a>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="slider">
+    <div class="slider_content"><a href=""><img class="content_img" src="{% static 'home/img/slide/gym.jpg' %}" alt="背景画像"></a></div>
+    <div class="slider_content"><a href=""><img class="content_img" src="{% static 'home/img/slide/home1.jpg' %}" alt="背景画像"></a></div>
+    <div class="slider_content"><a href=""><img class="content_img" src="{% static 'home/img/slide/home2.jpg' %}" alt="背景画像"></a></div>
+    <div class="slider_content"><a href=""><img class="content_img" src="{% static 'home/img/slide/home3.jpg' %}" alt="背景画像"></a></div>
+</div>
+
+
+<main>
+
+    <div class="main_header" style="background-image: url({% static 'home/img/slide/home1.jpg' %});">
+        <h2 class="sub_title">GYM</h2>
+    </div>
+
+    <div class="main_content">
+
+
+        <p class="sentence">夏に映える筋肉美。筋肉の底から湧き出る爽やかさ。これだけでも理想のマッチョでしょう。だけどもうちょっとだけ筋肉にスパイスを加えて筋肉に花を咲かせよう。それがレザーマチョナイズ。「Business　Leather 灰汁取りー」とコラボして筋肉を最高に引き立てるレザーグッズを作り上げた。ジムで筋肉美を手に入れ、レザーを身に纏い、なんとも言えない絶妙な男らしさを醸し出しながら、マッスル人生を築き上げよう。</p>
+
+    </div>
+
+    <div class="main_header" style="background-image: url({% static 'home/img/slide/home1.jpg' %});">
+        <h2>STAFF</h2>
+    </div>
+
+    <div class="main_content">
+
+    </div>
+</main>
+
+{% endblock %}

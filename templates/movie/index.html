@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>動画ページ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+    <main class="container">
+
+    <!--DBから手に入れたデータをループ処理で描画していく。-->
+    {% for content in data %}
+    <div class="my-1 border">
+        <!--models.pyで定義したフィールドの属性名を指定する(filenameは動画ファイル名、titleは動画タイトル)
+            波括弧を使用して変数を表示、もしくは処理を実行させる。詳しくは教科書のP69を参照
+        -->
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.filename }}</p>
+    </div>
+    {% endfor %}
+
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,148 @@
+{% extends "common/l_sidebar.html" %}
+{% load static %}
+
+
+{% block page_title %}スタッフ一覧{% endblock %}
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'staff/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'staff/css/new_style.css' %}">
+
+
+<script src="{% static 'staff/js/jquery.inview.js' %}"></script>
+<script src="{% static 'staff/js/animation.js' %}"></script>
+
+{% endblock %}
+
+
+
+{% block main %}
+
+    <main id="mainarea" class="container">
+
+        <section id="aboutme">
+            
+            <div class="section_header_area">
+                <div class="section_header_shadow">About_staff</div>
+                <div class="section_header">About_staff</div>
+            </div>
+
+
+            <!--    TIPS:スタッフの画像と紹介テキストを互い違いにすることで、見る側にマンネリ感を与えないようにすることができる。
+                さらにアニメーションを使うことでユーザーのページ離脱を防ぐ
+            -->
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/adam-smith.jpg' %}" alt="Adam Smith" >
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1" >Adam Smith</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1" >大胸筋</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1" >7年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1" >彼女との時間よりもトレーニングの時間を優先しすぎて、彼女に振られた歴3回。女性との会話より筋肉との会話を得意とする。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/scott-martin.jpg' %}" alt="Scott Marrtin" >
+                    <!--
+                    <img class="col-sm-12" src="static/img/staffpic_edited/scott-martin.jpg" alt="Scott Martin"  >
+                    -->
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1">Scott Martin</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1">上腕二頭筋</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1">12年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1">家族旅行に欠かさず16kgのダンベルを持っていく。最近子供達が筋トレに興味を持ち出して喜んでいるが、妻は心配している。肉壁がすごいことから近所の人たちからは爽やかコンクリートと呼ばれている。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/monica-anderson.jpg' %}" alt="Monica Anderson" >
+                    <!--
+                    <img class="col-sm-12 " src="static/img/staffpic_edited/monica-anderson.jpg" alt="Monica Anderson" >
+                    -->
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1">Monica Anderson</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1">腹斜筋</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1">5年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1">彼氏の影響でジムに通い始めたが、どハマりし彼氏よりもムキムキになった。エクササイズ程度でしか鍛えない彼氏に嫌気がさして破局した。現在はイケメンフィジーカーと交際中。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/ken-williams.jpg' %}" alt="Ken Williams" >
+                    <!--
+                    <img class="col-sm-12" src="static/img/staffpic_edited/ken-williams.jpg" alt="Ken Williams"  >
+                    -->
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1">Ken Williams</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1">腹直筋</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1">5年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/emma-flores.jpg' %}" alt="Emma Flores" >
+                    <!--
+                    <img class="col-sm-12" src="static/img/staffpic_edited/emma-flores.jpg" alt="Emma Flores" >
+                    -->
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1">Emma Flores</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1">美脚</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1">4年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1">現役のバレリーナ。スタイルがよくとにかく体が柔らかい。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row about_staff_row">
+                <div class="col-sm-4 text-left" >
+                    <img class="col-sm-12" src="{% static 'staff/img/staffpic_edited/adam-smith.jpg' %}" alt="Adam Smith" >
+                    <!--
+                    <img class="col-sm-12" src="static/img/staffpic_edited/scott-martin.jpg" alt="Scott Martin"  >
+                    -->
+                </div>
+                <div class="col-sm-8 align-self-center">
+                    <div class="row my-2 text-left" style="font-size:0.9rem;">
+                        <div class="col-3 my-1">氏名</div><div class="col-9 my-1">Scott Martin</div>
+                        <div class="col-3 my-1">チャームポイント</div><div class="col-9 my-1">上腕二頭筋</div>
+                        <div class="col-3 my-1">トレーニング歴</div><div class="col-9 my-1">12年</div>
+                        <div class="col-3 my-1">一言</div><div class="col-9 my-1">家族旅行に欠かさず16kgのダンベルを持っていく。最近子供達が筋トレに興味を持ち出して喜んでいるが、妻は心配している。肉壁がすごいことから近所の人たちからは爽やかコンクリートと呼ばれている。</div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+
+        </main>
+
+
+
+
+
+
+
+{% endblock %}
+
